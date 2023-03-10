@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { Input } from './Input'
 
+import { LogIn } from 'lucide-react'
+import Link from 'next/link'
 const logoImg = '/logo.webp'
 
 const headerData = ['Animes', 'Filmes', 'Gênero', 'Temporadas']
@@ -20,7 +22,18 @@ export function Header() {
         </ul>
       </nav>
 
-      <Input type="text" placeholder="O que você procura?" />
+      <div className="flex gap-4">
+        <Input type="text" placeholder="O que você procura?" />
+
+        <Link href="#">
+          <button
+            title="Entre/Cadastre-se"
+            className="p-1 rounded-sm text-text_hover"
+          >
+            <LogIn />
+          </button>
+        </Link>
+      </div>
     </header>
   )
 }
